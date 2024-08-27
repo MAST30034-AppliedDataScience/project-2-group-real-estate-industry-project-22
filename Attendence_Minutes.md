@@ -23,7 +23,7 @@ Project Task Allocation:
 • Member 5: ...
 
 Commitments:
-• Member 1: e.g. mostly free, unavailable on Tuesday, etc.
+• Priscilla: e.g. mostly free, unavailable on Tuesday, etc.
 • Member 2: ...
 • Member 3: ...
 • Member 4: ...
@@ -31,3 +31,4 @@ Commitments:
 
 Signed: (list members in attendance) (28/08/2024)
 Rachel Molent
+Priscilla Tan 

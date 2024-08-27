@@ -25,10 +25,11 @@ Project Task Allocation:
 Commitments:
 • Member 1: e.g. mostly free, unavailable on Tuesday, etc.
 • Priscilla : [ Free all day : Mondays, Thursdays, weekends] [Afternoons : Tuesday, Wednesday] [Monrings : Fridays]
-• Member 3: ...
+• Nathan: [Free all day: Monday]
 • Member 4: ...
 • Member 5: ...
 
 Signed: (list members in attendance) (28/08/2024)
 Rachel Molent
 Priscilla Tan 
+Nathan Chen

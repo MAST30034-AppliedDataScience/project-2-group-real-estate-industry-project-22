@@ -33,3 +33,4 @@ Signed: (list members in attendance) (28/08/2024)
 Rachel Molent
 Priscilla Tan 
 Nathan Chen
+Arpan Patel

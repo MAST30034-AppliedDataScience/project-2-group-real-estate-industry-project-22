@@ -6,6 +6,7 @@ Feel free to use this as a source of inspiration, it is by no means production c
 """
 # built-in imports
 import re
+import requests, csv
 from json import dump
 from tqdm import tqdm
 
@@ -18,11 +19,17 @@ from urllib.request import urlopen, Request
 
 # constants
 BASE_URL = "https://www.domain.com.au"
-N_PAGES = range(1, 5) # update this to your liking
+N_PAGES = range(1, 2) # update this to your liking
 
 # begin code
 url_links = []
 property_metadata = defaultdict(dict)
+
+
+file = open('example.csv', 'w', newline='')
+writer = csv.writer(file)
+headers = ['url','name', 'cost_text', 'rooms', 'parking', 'desc']
+writer.writerow(headers)
 
 # generate list of urls to visit
 for page in N_PAGES:
@@ -91,6 +98,11 @@ for property_url in pbar:
 
     pbar.set_description(f"{(success_count/total_count * 100):.0f}% successful")
 
-# output to example json in data/raw/
-with open('../data/raw/example.json', 'w') as f:
-    dump(property_metadata, f)
+# # output to example json in data/raw/
+# with open('../data/raw/example.csv', 'w') as f:
+#     dump(property_metadata, f)
+    file = open('example.csv', 'a', newline='', encoding='utf-8')
+    writer = csv.writer(file)
+    headers = (['url','name', 'cost_text', 'rooms', 'parking', 'desc'])
+    writer.writerow(property_metadata[property_url]['name'])
+    file.close()

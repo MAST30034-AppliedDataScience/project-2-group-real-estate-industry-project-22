@@ -11,7 +11,7 @@ from urllib.request import urlopen, Request
 
 # constants
 BASE_URL = "https://www.domain.com.au"
-N_PAGES = range(1, 2)  # Update this to your liking
+N_PAGES = range(1, 10)  # Update this to your liking
 
 # begin code
 url_links = []

@@ -71,5 +71,5 @@ Commitments:
 
 Signed: (list members in attendance) (02/09/2024)
 Rachel Molent
-
+Arpan Patel
 

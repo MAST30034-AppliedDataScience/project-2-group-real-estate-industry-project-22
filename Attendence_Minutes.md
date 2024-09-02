@@ -1,5 +1,6 @@
 Project Title
 
+# Meeting 1:
 Minutes (28/08/2024 / 9 am - 11am)
 
 Group Members: (list members in attendance)
@@ -35,3 +36,40 @@ Priscilla Tan
 Nathan Chen
 Arpan Patel
 Davyn Rusello Sumardi
+
+
+
+# Meeting 2
+
+Minutes (2/09/2024 / 10 am - 12pm)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Davyn Rusello Sumardi
+Priscilla Tan
+
+Agenda:
+• Topic 1: Review of completed tasks and encountered issues
+• Topic 2: Refine location of interest - mainly CBD due to data availability and transportation
+• Topic 3: Explored scraped data obtained including transportation map
+• Topic 4: Discussed wider range of features for scraping
+• Topic 5: Shared links to assist in scraping
+• Topic 6: Recoding scape.py file to scrape data into parquet format
+• Topic 7: Discussed goals to complete by Wednesday's meeting
+
+
+Project Task Allocation:
+• All Members: 
+
+Commitments:
+• Priscilla :
+• Nathan    : 
+• Davyn     : 
+• Arpan     : 
+• Rachel    : [Free all day: Tuesday, Wednesday & Thursday] [Morning & Afternoon : Friday] [Morning : Before 2:15 Monday]
+
+Signed: (list members in attendance) (02/09/2024)
+Rachel Molent
+
+

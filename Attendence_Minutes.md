@@ -74,7 +74,7 @@ Project Task Allocation: (Complete by Wednesday)
 Commitments:
 • Priscilla :
 • Nathan    : 
-• Davyn     : 
+• Davyn     : [Free all day: Monday & Friday]
 • Arpan     : 
 • Rachel    : [Free all day: Tuesday, Wednesday & Thursday] [Morning & Afternoon : Friday] [Morning : Before 2:15 Monday]
 
@@ -84,3 +84,4 @@ Arpan Patel
 Davyn Rusello Sumardi
 Priscilla Tan
 Nathan Chen
+================================================================================================

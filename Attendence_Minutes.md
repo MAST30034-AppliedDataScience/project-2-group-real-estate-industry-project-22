@@ -53,11 +53,12 @@ Nathan Chen
 Agenda:
 • Topic 1: Review of completed tasks and encountered issues
 • Topic 2: Refine location of interest - mainly CBD due to data availability and transportation
-• Topic 3: Explored scraped data obtained including transportation map
-• Topic 4: Discussed wider range of features for scraping
-• Topic 5: Shared links to assist in scraping
-• Topic 6: Recoding scape.py file to scrape data into parquet format
-• Topic 7: Discussed goals to complete by Wednesday's meeting
+• Topic 3: Refined target audience
+• Topic 4: Explored scraped data obtained and transportation map
+• Topic 5: Discussed wider range of features for scraping
+• Topic 6: Shared links to assist in scraping
+• Topic 7: Recoding scape.py file to scrape data into parquet format
+• Topic 8: Discussed goals to complete by Wednesday's meeting
 
 
 Goals by Wednesday:

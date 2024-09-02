@@ -37,17 +37,18 @@ Nathan Chen
 Arpan Patel
 Davyn Rusello Sumardi
 
-
+=================================================================================================
 
 # Meeting 2
 
-Minutes (2/09/2024 / 10 am - 12pm)
+Minutes (2/09/2024 / 10 am - 11am)
 
 Group Members: (list members in attendance)
 Arpan Patel
 Rachel Molent
 Davyn Rusello Sumardi
 Priscilla Tan
+Nathan Chen
 
 Agenda:
 • Topic 1: Review of completed tasks and encountered issues
@@ -59,8 +60,16 @@ Agenda:
 • Topic 7: Discussed goals to complete by Wednesday's meeting
 
 
-Project Task Allocation:
-• All Members: 
+Goals by Wednesday:
+1. CSV files are too large. Save into a diff file format e.g. parquet 
+2. Create a new script to scrape suburb profiles (schools, city distance, tram or train accesible)
+3. Find shape file for mapping purposes - done
+
+
+Project Task Allocation: (Complete by Wednesday)
+• Rachel and Nathan: Task 1
+• Priscilla, Davyn, Arpan: Task 2
+
 
 Commitments:
 • Priscilla :
@@ -71,5 +80,7 @@ Commitments:
 
 Signed: (list members in attendance) (02/09/2024)
 Rachel Molent
-
-
+Arpan Patel
+Davyn Rusello Sumardi
+Priscilla Tan
+Nathan Chen

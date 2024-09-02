@@ -65,11 +65,11 @@ Project Task Allocation:
 Commitments:
 • Priscilla :
 • Nathan    : 
-• Davyn     : 
+• Davyn     : [Free all day: Monday & Friday]
 • Arpan     : 
 • Rachel    : [Free all day: Tuesday, Wednesday & Thursday] [Morning & Afternoon : Friday] [Morning : Before 2:15 Monday]
 
 Signed: (list members in attendance) (02/09/2024)
 Rachel Molent
 Arpan Patel
-
+Davyn Rusello Sumardi

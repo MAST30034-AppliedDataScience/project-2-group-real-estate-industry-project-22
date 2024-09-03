@@ -19,12 +19,12 @@ import lxml
 BASE_URL = "https://www.domain.com.au"
 N_PAGES = range(1, 5)  # Update this to your liking
 
+
+
 def start_scrape():
     # begin code
     url_links = []
     property_metadata = defaultdict(dict)
-
-
 
     # generate list of urls to visit
     for page in N_PAGES:
@@ -75,6 +75,57 @@ def start_scrape():
                 [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'Parking' in feature.text]
             )
 
+            # listingID:
+            property_metadata[property_url]['listingid'] = ", ".join(
+                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'listingId' in feature.text]
+            )
+
+            # street:
+            property_metadata[property_url]['street'] = ", ".join(
+                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'street' in feature.text]
+            )
+
+            # suburb:
+            property_metadata[property_url]['suburb'] = ", ".join(
+                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'suburb' in feature.text]
+            )
+
+            # postcode:
+            property_metadata[property_url]['postcode'] = ", ".join(
+                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'postcode' in feature.text]
+            )
+
+            # property type:
+            property_metadata[property_url]['propertyType'] = ", ".join(
+                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'apartment' in feature.text 
+                 or 'unit' in feature.text or 'house' in feature.text or 'flat' in feature.text]
+            )
+
+            # schools:
+            property_metadata[property_url]['school'] = ", ".join(
+                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'school' in feature.text]
+            )
+
+            # features:
+            property_metadata[property_url]['features'] = ", ".join(
+                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'feature' in feature.text]
+            )
+
+            # loanfinder:
+            property_metadata[property_url]['loan'] = ", ".join(
+                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'loan' in feature.text]
+            )
+
+            # listingSummary:
+            property_metadata[property_url]['listingsummary'] = ", ".join(
+                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'summary' in feature.text]
+            )
+
+            # suburb insights:
+            property_metadata[property_url]['suburbInsights'] = ", ".join(
+                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'suburbInsights' in feature.text]
+            )
+
             # property description
             property_metadata[property_url]['desc'] = bs_object.find("p").text.strip() if bs_object.find("p") else "N/A"
             """
@@ -85,7 +136,17 @@ def start_scrape():
                 property_metadata[property_url]['cost_text'],
                 property_metadata[property_url]['rooms'],
                 property_metadata[property_url]['parking'],
-                property_metadata[property_url]['desc']
+                property_metadata[property_url]['desc'],
+                property_metadata[property_url]['listingid'],
+                property_metadata[property_url]['street'],
+                property_metadata[property_url]['suburb'],
+                property_metadata[property_url]['postcode'],
+                property_metadata[property_url]['propertyType'],
+                property_metadata[property_url]['school'],
+                property_metadata[property_url]['features'],
+                property_metadata[property_url]['loan'],
+                property_metadata[property_url]['listingsummary'],
+                property_metadata[property_url]['suburbInsights']
             ])
             """
             success_count += 1

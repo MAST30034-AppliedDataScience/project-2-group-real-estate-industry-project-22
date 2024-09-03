@@ -2,26 +2,29 @@
 import re
 import requests
 import csv
-from json import dump
+from json import dump, load
 from tqdm import tqdm
 from collections import defaultdict
 import urllib.request
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
+import pandas as pd  
+import pyarrow
+import string
+import os
+import cchardet
+import lxml
 
 # constants
 BASE_URL = "https://www.domain.com.au"
-N_PAGES = range(1, 10)  # Update this to your liking
+N_PAGES = range(1, 5)  # Update this to your liking
 
-# begin code
-url_links = []
-property_metadata = defaultdict(dict)
+def start_scrape():
+    # begin code
+    url_links = []
+    property_metadata = defaultdict(dict)
 
-# Open the CSV file once before the loop
-with open('example.csv', 'w', newline='', encoding='utf-8') as file:
-    writer = csv.writer(file)
-    headers = ['url', 'name', 'cost_text', 'rooms', 'parking', 'desc']
-    writer.writerow(headers)
+
 
     # generate list of urls to visit
     for page in N_PAGES:
@@ -74,7 +77,7 @@ with open('example.csv', 'w', newline='', encoding='utf-8') as file:
 
             # property description
             property_metadata[property_url]['desc'] = bs_object.find("p").text.strip() if bs_object.find("p") else "N/A"
-
+            """
             # Write each row to the CSV
             writer.writerow([
                 property_url,
@@ -84,10 +87,73 @@ with open('example.csv', 'w', newline='', encoding='utf-8') as file:
                 property_metadata[property_url]['parking'],
                 property_metadata[property_url]['desc']
             ])
-
+            """
             success_count += 1
 
         except AttributeError:
             print(f"Issue with {property_url}")
 
         pbar.set_description(f"{(success_count / total_count * 100):.0f}% successful")
+
+        # output to example json in data/raw/
+    with open('../data/raw/example.json', 'w') as f:
+        dump(property_metadata, f)
+
+def convert_to_parquet(filepath: str, output_path: str) -> None:
+    """ Function converts a json file into a parquet file
+
+    Parameters:
+    filepath (str): the filepath that locates our json data
+
+    output_path (str): the filepath that we will place our new parquet file into
+
+    Returns:
+    None
+    """
+    with open(filepath) as f:
+        data = load(f)
+
+    new_data = change_json_format(data)
+
+    # conversion from json -> dataframe -> parquet
+    df = pd.DataFrame(new_data)
+    df.to_parquet(output_path, engine='pyarrow')
+
+    delete_json_file(filepath)
+
+# function that changes the formatting of the json file
+def change_json_format(data: dict) -> dict:
+    """ Function grabs the renames the json keys to the words after the last backslash in the url and adds the url as an item
+
+    Parameters:
+    data (dict): json dictionary we are changing
+
+    Returns:
+    dict: our new json dictionary
+    
+    """
+    new_data = {}
+    for i in data.keys():
+        new_name = i.rsplit('/', 1)[-1]
+        new_data[new_name] = data[i]
+        new_data[new_name]["href"] = i
+    return new_data
+
+def delete_json_file(filepath: str) -> None:
+    """ Function deletes the json file we are converting from
+
+    Parameters:
+    filepath (string): filepath to the json file we are deleting
+
+    Returns:
+    None
+    """
+    try:
+        os.remove(filepath)
+        print(f"File '{filepath}' deleted successfully")
+    except FileNotFoundError:
+        print(f"File '{filepath}' not found")
+    except PermissionError:
+        print(f"Permission denied: '{filepath}'")
+    except Exception as e:
+        print(f"An error occurred: {e}")

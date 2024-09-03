@@ -21,7 +21,15 @@ N_PAGES = range(1, 5)  # Update this to your liking
 
 
 
-def start_scrape():
+def start_scrape() -> None:
+    """ Function that scrapes https://www.domain.com.au and outputs the data into a json file
+
+    Parameters:
+    None
+
+    Returns:
+    None
+    """
     # begin code
     url_links = []
     property_metadata = defaultdict(dict)

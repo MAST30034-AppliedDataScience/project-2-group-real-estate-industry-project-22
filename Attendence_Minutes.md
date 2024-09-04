@@ -86,3 +86,44 @@ Davyn Rusello Sumardi
 Priscilla Tan
 Nathan Chen
 ================================================================================================
+# Meeting 3
+
+Minutes (4/09/2024 / 10 am - 11am)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Davyn Rusello Sumardi
+Priscilla Tan
+Nathan Chen
+
+Agenda:
+• Topic 1: Refined scrape file conversion to parquet
+• Topic 2: Resolved discrepancies between our code that cause errors 
+• Topic 3: Discussed and tmplemented wider range of features for scraping
+• Topic 4: Discussed goals to complete by Wednesday's meeting
+
+
+Goals by Wednesday:
+1.
+2.
+3.
+
+
+Project Task Allocation: (Complete by Wednesday)
+• 
+
+
+Commitments:
+• Priscilla : 
+• Nathan    : 
+• Davyn     : [Free all day: Monday & Friday]
+• Arpan     : 
+• Rachel    : [Free all day: Tuesday, Wednesday & Thursday] [Morning & Afternoon : Friday] [Morning : Before 2:15 Monday]
+
+Signed: (list members in attendance) (02/09/2024)
+Rachel Molent
+Arpan Patel
+Davyn Rusello Sumardi
+Priscilla Tan
+Nathan Chen

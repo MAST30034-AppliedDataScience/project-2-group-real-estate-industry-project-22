@@ -17,7 +17,7 @@ import lxml
 
 # constants
 BASE_URL = "https://www.domain.com.au"
-N_PAGES = range(1, 5)  # Update this to your liking
+N_PAGES = range(1, 2)  # Update this to your liking
 
 
 
@@ -82,11 +82,12 @@ def start_scrape() -> None:
             property_metadata[property_url]['parking'] = ", ".join(
                 [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'Parking' in feature.text]
             )
-
+            """
             # listingID:
             property_metadata[property_url]['listingid'] = ", ".join(
                 [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'listingId' in feature.text]
             )
+            """
 
             # street:
             property_metadata[property_url]['street'] = ", ".join(

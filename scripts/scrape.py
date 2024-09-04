@@ -19,6 +19,13 @@ import lxml
 BASE_URL = "https://www.domain.com.au"
 N_PAGES = range(1, 5)  # Update this to your liking
 
+#Scrape suburb from the address
+def extract_suburb(address: str) -> str:
+    """Extract the suburb name from the property address."""
+    match = re.search(r'(?<=, )\w+', address)
+    if match:
+        return match.group(0)
+    return "Unknown"
 
 
 def start_scrape():
@@ -28,7 +35,7 @@ def start_scrape():
 
     # generate list of urls to visit
     for page in N_PAGES:
-        url = BASE_URL + f"/rent/melbourne-region-vic/?sort=price-desc&page={page}"
+        url = BASE_URL + f"/rent/?excludedeposittaken=1&state=vic&page={page}"
         print(f"Visiting {url}")
         bs_object = BeautifulSoup(urlopen(Request(url, headers={'User-Agent': "PostmanRuntime/7.6.0"})), "lxml")
 
@@ -86,10 +93,8 @@ def start_scrape():
             )
 
             # suburb:
-            property_metadata[property_url]['suburb'] = ", ".join(
-                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'suburb' in feature.text]
-            )
-
+            property_metadata[property_url]['suburb'] = extract_suburb[property_url]['name']
+            
             # postcode:
             property_metadata[property_url]['postcode'] = ", ".join(
                 [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'postcode' in feature.text]

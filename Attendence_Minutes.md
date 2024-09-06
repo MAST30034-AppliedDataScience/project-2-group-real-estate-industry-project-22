@@ -86,27 +86,36 @@ Davyn Rusello Sumardi
 Priscilla Tan
 Nathan Chen
 ================================================================================================
-
 # Meeting 3
-Minutes (04/09/2024 / 9:00 - 11:45)
 
-- Topic 1: Previous tasks
-- TOpic 2: Data optimisation - straight to parquet
-- Topic 4: Working on more features for suburbs and schools
-- Topic 3: Confusion in code
+Minutes (4/09/2024 / 10 am - 11am)
 
-Goals by Friday:
-1. Get code working without errors - fix up bugs
-2. Be able to get our data quickly - Straight to parquet dataframe
-3. Figure out External data
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Davyn Rusello Sumardi
+Priscilla Tan
+Nathan Chen
+
+Agenda:
+• Topic 1: Refined scrape file conversion to parquet
+• Topic 2: Resolved discrepancies between our code that cause errors 
+• Topic 3: Discussed and tmplemented wider range of features for scraping
+• Topic 4: Discussed goals to complete by Wednesday's meeting
+
+
+Goals by Wednesday:
+1.
+2.
+3.
+
 
 Project Task Allocation: (Complete by Wednesday)
-• Task 1: Everyone 
-• Task 2: Everyone
-- Task 3: Davyn, Arpan
+• 
+
 
 Commitments:
-• Priscilla :
+• Priscilla : 
 • Nathan    : 
 • Davyn     : [Free all day: Monday & Friday]
 • Arpan     : 

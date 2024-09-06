@@ -105,13 +105,13 @@ Agenda:
 
 
 Goals by Wednesday:
-1.
-2.
-3.
+1. Make Scraping more time efficient
+2. Access wider range of features and data
+3. Be ready to start data processing
 
 
 Project Task Allocation: (Complete by Wednesday)
-• 
+• All Members to work on tasks above
 
 
 Commitments:

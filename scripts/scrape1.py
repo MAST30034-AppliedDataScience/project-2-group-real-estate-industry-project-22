@@ -10,17 +10,18 @@ import pandas as pd  # Import pandas to read CSV
 
 # constants
 BASE_URL = "https://www.domain.com.au"
-N_PAGES = range(1, 2)  # Change this as needed
+N_PAGES = range(1, 50)  # Change this as needed
 
 # Load the suburb and postcode data from a CSV file
-suburbs_df = pd.read_csv('suburbs.csv')  # Ensure this CSV contains 'suburb' and 'postcode' columns
+suburbs_df = pd.read_csv('../data/raw/postcodes.csv')  # Ensure this CSV contains 'suburb' and 'postcode' columns
+
 
 # begin code
 property_metadata = defaultdict(dict)
 
 # Loop through each suburb and its postcode
 for index, row in suburbs_df.iterrows():
-    suburb = row['suburb'].lower().replace(' ', '-')  # Convert to lowercase and hyphenate
+    suburb = row['locality'].lower().replace(' ', '-')  # Convert to lowercase and hyphenate
     postcode = row['postcode']
 
     print(f"Scraping data for {suburb} ({postcode})")
@@ -34,6 +35,7 @@ for index, row in suburbs_df.iterrows():
             response = urlopen(Request(url, headers={'User-Agent': "PostmanRuntime/7.6.0"}))
             bs_object = BeautifulSoup(response, "lxml")
         except Exception as e:
+            delete.append(postcode)
             print(f"Error visiting {url}: {e}")
             break
 

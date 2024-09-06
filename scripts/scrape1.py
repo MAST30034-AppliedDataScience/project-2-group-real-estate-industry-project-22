@@ -13,14 +13,15 @@ BASE_URL = "https://www.domain.com.au"
 N_PAGES = range(1, 50)  # Change this as needed
 
 # Load the suburb and postcode data from a CSV file
-suburbs_df = pd.read_csv('suburbs.csv')  # Ensure this CSV contains 'suburb' and 'postcode' columns
+suburbs_df = pd.read_csv('../data/raw/postcodes.csv')  # Ensure this CSV contains 'suburb' and 'postcode' columns
+
 
 # begin code
 property_metadata = defaultdict(dict)
 
 # Loop through each suburb and its postcode
 for index, row in suburbs_df.iterrows():
-    suburb = row['suburb'].lower().replace(' ', '-')  # Convert to lowercase and hyphenate
+    suburb = row['locality'].lower().replace(' ', '-')  # Convert to lowercase and hyphenate
     postcode = row['postcode']
 
     print(f"Scraping data for {suburb} ({postcode})")
@@ -34,10 +35,11 @@ for index, row in suburbs_df.iterrows():
             response = urlopen(Request(url, headers={'User-Agent': "PostmanRuntime/7.6.0"}))
             bs_object = BeautifulSoup(response, "lxml")
         except Exception as e:
+            delete.append(postcode)
             print(f"Error visiting {url}: {e}")
             break
 
-        # find the unordered list (ul) elements which are the results, then
+        # Find the unordered list (ul) elements which are the results, then
         # find all href (a) tags that are from the base_url website.
         try:
             index_links = bs_object \
@@ -59,49 +61,42 @@ for index, row in suburbs_df.iterrows():
 
         print(f"Total URLs collected for {suburb}: {len(url_links)}")
 
-        # for each url, scrape some basic metadata
-        pbar = tqdm(url_links[1:])
-        success_count, total_count = 0, 0
-        for property_url in pbar:
+        # For each URL, scrape the property-specific metadata
+        for property_url in tqdm(url_links):
+            print(f"Visiting property: {property_url}")
             try:
-                bs_object = BeautifulSoup(urlopen(Request(property_url, headers={'User-Agent': "PostmanRuntime/7.6.0"})), "lxml")
-                total_count += 1
+                property_page = urlopen(Request(property_url, headers={'User-Agent': "PostmanRuntime/7.6.0"}))
+                property_soup = BeautifulSoup(property_page, "lxml")
 
-                # looks for the header class to get property name
-                property_metadata[property_url]['name'] = bs_object \
+                # Scrape property-specific data here
+                property_metadata[property_url]['name'] = property_soup \
                     .find("h1", {"class": "css-164r41r"}) \
-                    .text
+                    .text.strip()
 
-                # looks for the div containing a summary title for cost
-                property_metadata[property_url]['cost_text'] = bs_object \
+                property_metadata[property_url]['cost_text'] = property_soup \
                     .find("div", {"data-testid": "listing-details__summary-title"}) \
-                    .text
+                    .text.strip()
 
-                # get rooms and parking
-                rooms = bs_object \
+                rooms = property_soup \
                     .find("div", {"data-testid": "property-features"}) \
                     .findAll("span", {"data-testid": "property-features-text-container"})
 
-                # rooms
+                # Scrape rooms
                 property_metadata[property_url]['rooms'] = [
                     re.findall(r'\d+\s[A-Za-z]+', feature.text)[0] for feature in rooms
                     if 'Bed' in feature.text or 'Bath' in feature.text
                 ]
-                # parking
+                # Scrape parking
                 property_metadata[property_url]['parking'] = [
                     re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms
                     if 'Parking' in feature.text
                 ]
 
-                property_metadata[property_url]['desc'] = re \
-                    .sub(r'<br\/>', '\n', str(bs_object.find("p"))) \
-                    .strip('</p>')
-                success_count += 1
+                # Scrape property description
+                property_metadata[property_url]['desc'] = re.sub(r'<br\/>', '\n', str(property_soup.find("p"))).strip('</p>')
 
-            except AttributeError:
-                print(f"Issue with {property_url}")
-
-            pbar.set_description(f"{(success_count/total_count * 100):.0f}% successful")
+            except Exception as e:
+                print(f"Error scraping property {property_url}: {e}")
 
 # Write the data to a JSON file
 output_dir = os.getcwd()  # Current working directory

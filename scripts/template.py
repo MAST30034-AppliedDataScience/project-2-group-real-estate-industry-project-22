@@ -17,7 +17,7 @@ import lxml
 
 # constants
 BASE_URL = "https://www.domain.com.au"
-N_PAGES = range(1, 2)  # Update this to your liking
+N_PAGES = range(1, 51)  # Update this to your liking
 
 #Scrape suburb from the address
 def extract_suburb(address: str) -> str:
@@ -43,7 +43,9 @@ def start_scrape() -> None:
 
     # generate list of urls to visit
     for page in N_PAGES:
-        url = BASE_URL + f"/rent/?excludedeposittaken=1&state=vic&page={page}"
+        
+
+        url = f"https://www.domain.com.au/rent/melbourne-vic-3000/?page={page}"
         print(f"Visiting {url}")
         bs_object = BeautifulSoup(urlopen(Request(url, headers={'User-Agent': "PostmanRuntime/7.6.0"})), "lxml")
 
@@ -89,80 +91,81 @@ def start_scrape() -> None:
             property_metadata[property_url]['parking'] = ", ".join(
                 [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'Parking' in feature.text]
             )
-            """
+            
             # listingID:
             property_metadata[property_url]['listingid'] = ", ".join(
                 [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'listingId' in feature.text]
             )
-            """
-
-            # street:
-            property_metadata[property_url]['street'] = ", ".join(
-                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'street' in feature.text]
-            )
-
-            # suburb:
-            property_metadata[property_url]['suburb'] = extract_suburb[property_url]['name']
             
-            # postcode:
-            property_metadata[property_url]['postcode'] = ", ".join(
-                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'postcode' in feature.text]
-            )
 
-            # property type:
-            property_metadata[property_url]['propertyType'] = ", ".join(
-                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'apartment' in feature.text 
-                 or 'unit' in feature.text or 'house' in feature.text or 'flat' in feature.text]
-            )
+            # # street:
+            # property_metadata[property_url]['street'] = ", ".join(
+            #     [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'street' in feature.text]
+            # )
 
-            # schools:
-            property_metadata[property_url]['school'] = ", ".join(
-                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'school' in feature.text]
-            )
+            # # suburb:
+            # property_metadata[property_url]['suburb'] = extract_suburb[property_url]['name']
+            
+            # # postcode:
+            # property_metadata[property_url]['postcode'] = ", ".join(
+            #     [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'postcode' in feature.text]
+            # )
 
-            # features:
-            property_metadata[property_url]['features'] = ", ".join(
-                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'feature' in feature.text]
-            )
+            # # property type:
+            # property_metadata[property_url]['propertyType'] = ", ".join(
+            #     [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'apartment' in feature.text 
+            #      or 'unit' in feature.text or 'house' in feature.text or 'flat' in feature.text]
+            # )
 
-            # loanfinder:
-            property_metadata[property_url]['loan'] = ", ".join(
-                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'loan' in feature.text]
-            )
+            # # schools:
+            # property_metadata[property_url]['school'] = ", ".join(
+            #     [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'school' in feature.text]
+            # )
 
-            # listingSummary:
-            property_metadata[property_url]['listingsummary'] = ", ".join(
-                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'summary' in feature.text]
-            )
+            # # features:
+            # property_metadata[property_url]['features'] = ", ".join(
+            #     [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'feature' in feature.text]
+            # )
 
-            # suburb insights:
-            property_metadata[property_url]['suburbInsights'] = ", ".join(
-                [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'suburbInsights' in feature.text]
-            )
+            # # loanfinder:
+            # property_metadata[property_url]['loan'] = ", ".join(
+            #     [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'loan' in feature.text]
+            # )
+
+            # # listingSummary:
+            # property_metadata[property_url]['listingsummary'] = ", ".join(
+            #     [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'summary' in feature.text]
+            # )
+
+            # # suburb insights:
+            # property_metadata[property_url]['suburbInsights'] = ", ".join(
+            #     [re.findall(r'\S+\s[A-Za-z]+', feature.text)[0] for feature in rooms if 'suburbInsights' in feature.text]
+            # )
 
             # property description
             property_metadata[property_url]['desc'] = bs_object.find("p").text.strip() if bs_object.find("p") else "N/A"
-            """
-            # Write each row to the CSV
-            writer.writerow([
-                property_url,
-                property_metadata[property_url]['name'],
-                property_metadata[property_url]['cost_text'],
-                property_metadata[property_url]['rooms'],
-                property_metadata[property_url]['parking'],
-                property_metadata[property_url]['desc'],
-                property_metadata[property_url]['listingid'],
-                property_metadata[property_url]['street'],
-                property_metadata[property_url]['suburb'],
-                property_metadata[property_url]['postcode'],
-                property_metadata[property_url]['propertyType'],
-                property_metadata[property_url]['school'],
-                property_metadata[property_url]['features'],
-                property_metadata[property_url]['loan'],
-                property_metadata[property_url]['listingsummary'],
-                property_metadata[property_url]['suburbInsights']
-            ])
-            """
+           
+            # """
+            # # Write each row to the CSV
+            # writer.writerow([
+            #     property_url,
+            #     property_metadata[property_url]['name'],
+            #     property_metadata[property_url]['cost_text'],
+            #     property_metadata[property_url]['rooms'],
+            #     property_metadata[property_url]['parking'],
+            #     property_metadata[property_url]['desc'],
+            #     property_metadata[property_url]['listingid'],
+            #     property_metadata[property_url]['street'],
+            #     property_metadata[property_url]['suburb'],
+            #     property_metadata[property_url]['postcode'],
+            #     property_metadata[property_url]['propertyType'],
+            #     property_metadata[property_url]['school'],
+            #     property_metadata[property_url]['features'],
+            #     property_metadata[property_url]['loan'],
+            #     property_metadata[property_url]['listingsummary'],
+            #     property_metadata[property_url]['suburbInsights']
+            # ])
+            # """
             success_count += 1
 
         except AttributeError:

@@ -10,7 +10,7 @@ import pandas as pd
 import pyarrow
 import string
 import os
-import cchardet
+# import cchardet
 import lxml
 
 # Constants

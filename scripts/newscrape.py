@@ -1,53 +1,73 @@
 import re
-import requests
-import csv
 from json import dump, load
 from tqdm import tqdm
 from collections import defaultdict
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
 import pandas as pd
-import pyarrow
-import string
 import os
 # import cchardet
-import lxml
+import pandas as pd
 
 # Constants
 BASE_URL = "https://www.domain.com.au"
-VICTORIA_POSTCODES = range(3000, 3001)  # Range of postcodes in Victoria
+N_PAGES = range(1, 2)  # Update this to your liking
+delete = []
+
+# Load the suburb and postcode data from a CSV file
+suburbs_df = pd.read_csv('../data/raw/postcodes.csv')  # Ensure this CSV contains 'suburb' and 'postcode' columns
+
+
 
 def start_scrape():
     url_links = []
     property_metadata = defaultdict(dict)
 
-    # Loop through each postcode in Victoria
-    for postcode in VICTORIA_POSTCODES:
-        page_number = 1
-        while True:
-            url = f"{BASE_URL}/rent/?postcode={postcode}&sort=price-desc&page={page_number}"
-            print(f"Visiting {url}")
-            response = urlopen(Request(url, headers={'User-Agent': "Mozilla/5.0"}))
-            bs_object = BeautifulSoup(response, "lxml")
+    #url = r"https://www.domain.com.au" #website url
+
+    # header = { #adding user agent to be get access to the website found by searching my user agent in google
+    #     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+    # }
+
+
+    # Loop through each suburb and its postcode
+    for index, row in suburbs_df.iterrows():
+        suburb = row['locality'].lower().replace(' ', '-')  # Convert to lowercase and hyphenate
+        postcode = row['postcode']
+
+        print(f"Scraping data for {suburb} ({postcode})")
+
+            #url = f"{BASE_URL}/rent/?postcode={postcode}&sort=price-desc&page={1}"
+            #for page in N_PAGES:
+            # Generate the URL for the current suburb and postcode
+        url = BASE_URL + f"/rent/{suburb}-vic-{postcode}/?ssubs=0&sort=suburb-asc&page={1}"
+        print(f"Visiting {url}")
+        response = urlopen(Request(url, headers={'User-Agent': "Mozilla/5.0"}))
+        print(response)
+        bs_object = BeautifulSoup(response, "lxml")
+
+            # if ((response.status_code == 404)): # 404 is an error code
+            #     delete.append(postcode)
+            #     print(delete)
 
             # Find the unordered list (ul) elements which are the results
-            try:
-                index_links = bs_object.find("ul", {"data-testid": "results"}).findAll(
-                    "a", href=re.compile(f"{BASE_URL}/*")
-                )
-            except AttributeError:
-                print(f"No more results for postcode {postcode}. Moving to next postcode.")
-                break  # No more results, move to the next postcode
+        try:
+            index_links = bs_object.find("ul", {"data-testid": "results"}).findAll(
+                "a", href=re.compile(f"{BASE_URL}/*")
+            )
+        except AttributeError:
+            print(f"No more results for postcode {postcode}. Moving to next postcode.")
+            break  # No more results, move to the next postcode
 
-            if not index_links:
-                break  # If no links found, exit the loop for this postcode
+        if not index_links:
+            break  # If no links found, exit the loop for this postcode
 
-            for link in index_links:
-                # If it's a property address, add it to the list
-                if 'address' in link.get('class', []):
-                    url_links.append(link['href'])
+        for link in index_links:
+            # If it's a property address, add it to the list
+            if 'address' in link.get('class', []):
+                url_links.append(link['href'])
 
-            page_number += 1  # Increment the page number for the next iteration
+            #page_number += 1  # Increment the page number for the next iteration
 
     # Scrape basic metadata for each URL
     pbar = tqdm(url_links)
@@ -118,6 +138,3 @@ def delete_json_file(filepath: str) -> None:
         print(f"Permission denied: '{filepath}'")
     except Exception as e:
         print(f"An error occurred: {e}")
-
-
-

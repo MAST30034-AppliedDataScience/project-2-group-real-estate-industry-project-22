@@ -127,3 +127,32 @@ Arpan Patel
 Davyn Rusello Sumardi
 Priscilla Tan
 Nathan Chen
+
+================================================================================================
+
+# Meeting 4:
+Minutes (6/09/2024/ 6:45pm - 7pm)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Nathan Chen
+Priscilla Tan
+
+Agenda:
+• Topic 1: Go through Scraping code together, share changes
+
+Project Task Allocation:
+• All Members: Work on data scraping. Aim to have completed this by Monday's group meeting.
+
+Commitments:
+• Priscilla : [ Free all day : Mondays, Thursdays, weekends] [Afternoons : Tuesday, Wednesday] [Mornings : Fridays]
+• Nathan    : [Free all day: Monday]
+• Davyn     : [Free all day: Monday & Friday]
+• Rachel    : [Free all day: Tuesday, Wednesday & Thursday] [Morning & Afternoon : Friday] [Morning : Before 2:15 Monday]
+
+Signed: (list members in attendance) (6/09/2024)
+Rachel Molent
+Priscilla Tan 
+Nathan Chen
+Arpan Patel

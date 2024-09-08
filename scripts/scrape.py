@@ -1,19 +1,13 @@
 # built-in imports
 import re
-import requests
-import csv
 from json import dump, load
 from tqdm import tqdm
 from collections import defaultdict
-import urllib.request
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
 import pandas as pd  
-import pyarrow
-import string
 import os
 # import cchardet
-import lxml
 
 # constants
 BASE_URL = "https://www.domain.com.au"

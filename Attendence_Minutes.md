@@ -139,6 +139,7 @@ Rachel Molent
 Nathan Chen
 Priscilla Tan
 
+
 Agenda:
 • Topic 1: Go through Scraping code together, share changes
 
@@ -156,3 +157,60 @@ Rachel Molent
 Priscilla Tan 
 Nathan Chen
 Arpan Patel
+
+
+
+================================================================================================
+
+# Meeting 5:
+Minutes (11/09/2024/ 9am - 11am)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Nathan Chen
+Priscilla Tan
+Davyn Rusello Sumardi
+
+Agenda:
+• Topic 1: Review previous tasks and discuss encountered issues - runtime, selenium implementation
+• Topic 2: Discuss how to combine datasets
+• Topic 3: Finalise scraping - features and postcode
+• Topic 4: Allocate tasks for the week
+• Topic 5: Organise next group meeting - Saturday Evening
+
+
+Tasks (aim to complete by Saturday):
+1. Open Street Map
+2. Merging df's
+3. Preliminary analysis on Annual Rent by Suburb
+4. Finalise html Features on webscraping
+5. Preprocessing/data cleaning of domain.com data
+6. Obtain/Upload ABS data
+7. Run the scraping for full number of pages
+8. Start dataprocessing slides - Canva
+9. Write and Upload attendence
+10. Edit webscraping code to scrape by postcode
+
+
+Allocation:
+Nathan - Task 4, 5, 7
+Rachel - Task 8, 9
+Priscilla - Task 3
+Davyn - Task 2, 6
+Arpan - Task 1, 10
+
+
+Commitments:
+• Priscilla : [ Free all day : Mondays, Thursdays, weekends] [Afternoons : Tuesday, Wednesday] [Mornings : Fridays]
+• Nathan    : [Free all day: Monday]
+• Davyn     : [Free all day: Monday & Friday]
+• Rachel    : [Free all day: Tuesday, Wednesday & Thursday] [Morning & Afternoon : Friday] [Morning : Before 2:15 Monday]
+• Arpan     :    
+
+Signed: (list members in attendance) (6/09/2024)
+Rachel Molent
+Priscilla Tan 
+Nathan Chen
+Arpan Patel
+Davyn Rusello Sumardi

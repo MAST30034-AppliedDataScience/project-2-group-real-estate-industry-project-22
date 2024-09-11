@@ -190,7 +190,7 @@ Tasks (aim to complete by Saturday):
 7. Run the scraping for full number of pages
 8. Start dataprocessing slides - Canva
 9. Write and Upload attendence
-10. Edit webscraping code to scrape by postcode
+10. Edit webscraping code to scrape by postcode, add extra features in final scrape code
 
 
 Allocation:

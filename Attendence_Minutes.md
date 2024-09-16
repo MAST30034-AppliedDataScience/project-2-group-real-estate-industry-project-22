@@ -214,3 +214,51 @@ Priscilla Tan
 Nathan Chen
 Arpan Patel
 Davyn Rusello Sumardi
+
+================================================================================================
+
+# Meeting 6:
+Minutes (16/09/2024/ 11:30am -12 pm)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Priscilla Tan
+Davyn Rusello Sumardi
+
+Agenda:
+• Topic 1: Review previous tasks and discuss encountered issues
+• Topic 2: Try and resolve formatting issues for the Quarterly Rental Data
+• Topic 3: Outline Preprocessing tasks
+• Topic 4: Task allocation and expected completion time
+
+
+Tasks (Complete progressively):
+1. Combine dataframes
+2. Find a way to correctly format the Quarterly Rental data
+3. Open Street Map, check runtime
+4. Label encoding for furnishing
+5. Remove the properties with missing prices and missing car parking spaces
+6. Validity checking
+
+
+Allocation:
+Nathan - Task 6
+Rachel - Task 4
+Priscilla - Task 5
+Davyn - Task 1, 2
+Arpan - Task 3
+
+
+Commitments:
+• Priscilla : [Free all day : Mondays, Thursdays, weekends] [Afternoons : Tuesday, Wednesday] [Mornings : Fridays]
+• Nathan    : [Free all day: Monday]
+• Davyn     : [Free all day: Monday & Friday]
+• Rachel    : [Free all day: Tuesday, Wednesday & Thursday] [Morning & Afternoon : Friday] [Morning : Before 2:15 Monday]
+• Arpan     :    
+
+Signed: (list members in attendance) (16/09/2024)
+Rachel Molent
+Priscilla Tan 
+Arpan Patel
+Davyn Rusello Sumardi

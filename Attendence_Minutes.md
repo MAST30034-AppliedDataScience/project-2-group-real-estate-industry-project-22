@@ -262,3 +262,61 @@ Rachel Molent
 Priscilla Tan 
 Arpan Patel
 Davyn Rusello Sumardi
+
+
+================================================================================================
+
+# Meeting 7:
+Minutes (18/09/2024/ 9 am - 11 am)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Priscilla Tan
+Davyn Rusello Sumardi
+Nathan Chen
+
+
+Agenda:
+• Topic 1: Review previous tasks and discuss encountered issues
+• Topic 2: Resolve GitHub Push and Pull issues
+• Topic 3: Check postcode errors - decide on resolution and push code
+• Topic 4: Outline tasks
+• Topic 5: Task allocation
+
+
+Tasks :
+1. Remove Starting Chunks (Duplicate Postcodes) of the Parquet Files
+2. Rescrape the code that produced errors
+3. Combine Parquet files
+4. Merge Dataframes
+5. Checking entries are valid
+6. Label encoding for furnishing
+7. Analysis of Quarterly Rent
+8. Extracting Furnishing and Bills
+9. Add preprocessing steps to presentation and Cite data
+10. Open Street Maps - integrating maps for school catchment zones
+11. Finding closest facilities
+
+
+Allocation:
+Nathan - Task 5, 8
+Rachel - Task 6, 9
+Priscilla - Task 2, 7
+Davyn - Task 1, 3, 4
+Arpan - Task 10, 11
+
+
+Commitments:
+• Priscilla : [Free all day : Mondays, Thursdays, weekends] [Afternoons : Tuesday, Wednesday] [Mornings : Fridays]
+• Nathan    : [Free all day: Monday]
+• Davyn     : [Free all day: Monday & Friday]
+• Rachel    : [Free all day: Tuesday, Wednesday & Thursday] [Morning & Afternoon : Friday] [Morning : Before 2:15 Monday]
+• Arpan     :    
+
+Signed: (list members in attendance) (18/09/2024)
+Rachel Molent
+Priscilla Tan 
+Arpan Patel
+Davyn Rusello Sumardi
+Nathan Chen

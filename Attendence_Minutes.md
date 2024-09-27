@@ -320,3 +320,62 @@ Priscilla Tan
 Arpan Patel
 Davyn Rusello Sumardi
 Nathan Chen
+
+
+================================================================================================
+
+# Meeting 8:
+Minutes (27/09/2024, 4:30pm - 5:45pm)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Priscilla Tan
+Davyn Rusello Sumardi
+Nathan Chen
+
+
+Agenda:
+• Topic 1: Review of tasks
+• Topic 2: API demo
+• Topic 3: Review project spec timeline
+• Topic 4: Outlining models and features of interest
+• Topic 5: Task Allocation
+
+
+Tasks :
+1. Finalise furnishing tasks - resolve corner cases
+2. API, calculating distances to nearest supermarkets
+3. API, calculating distances to nearest schools and stations
+4. Furnishing regression, top 10 most liveable/affordable suburbs - Question 3
+5. Question 2
+6. API, calculating distances to nearest hospitals/health care
+7. Log transform the price
+8. Merge the dataframes
+9. Presentation
+10. Backup data
+
+
+Allocation:
+Nathan - Task 8
+Rachel - Task 1, 4, 7
+Priscilla - Task 6
+Davyn - Task 2, 5 
+Arpan - Task 3
+Anyone: task 9 and 10
+
+
+
+Commitments:
+• Priscilla : 
+• Nathan    : 
+• Davyn     : 
+• Rachel    : 
+• Arpan     :    
+
+Signed: (list members in attendance) (27/09/2024)
+Rachel Molent
+Priscilla Tan 
+Arpan Patel
+Davyn Rusello Sumardi
+Nathan Chen

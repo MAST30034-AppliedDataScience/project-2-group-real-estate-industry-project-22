@@ -134,6 +134,7 @@ data/curated/
 data/landing/
 data/raw/
 data/scraped/
+data/rent/
 
 # OSX .DS_Store file
 .DS_Store

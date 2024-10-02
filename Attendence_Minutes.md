@@ -363,17 +363,59 @@ Priscilla - Task 6
 Davyn - Task 2, 5 
 Arpan - Task 3
 Anyone: task 9 and 10
-
-
-
-Commitments:
-• Priscilla : 
-• Nathan    : 
-• Davyn     : 
-• Rachel    : 
-• Arpan     :    
+  
 
 Signed: (list members in attendance) (27/09/2024)
+Rachel Molent
+Priscilla Tan 
+Arpan Patel
+Davyn Rusello Sumardi
+Nathan Chen
+
+
+================================================================================================
+
+# Meeting 9:
+Minutes (2/10/2024, 9am - 11am)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Priscilla Tan
+Davyn Rusello Sumardi
+Nathan Chen
+
+
+Agenda:
+• Topic 1: Review of tasks
+• Topic 2: Share/back up code
+• Topic 3: Fix Formatting Issues
+• Topic 4: Refine definition of Liveability Score
+• Topic 5: Review Model Performance
+• Topic 6: Hyper Parameter Tuning
+• Topic 7: Discuss how to do forecasting - which features to use
+• Topic 8: Task Allocation
+
+
+Tasks :
+1. Presentation slides
+2. Regression - include more variables, forecasting
+3. Dataframe merging - distance to nearest facilities
+4. Convert price percentage change to dollars in Quarterly Rent Analysis
+5. Liveability score calculation
+6. Time series forecasting
+7. Log transform population
+8. Creating Graphics/maps for presentation
+
+Allocation:
+Nathan - Task 1, 8
+Rachel - Task 2, 7
+Priscilla - Task 5, 6
+Davyn - Task 3
+Arpan - Task 1, 4, 8
+
+
+Signed: (list members in attendance) (2/10/2024)
 Rachel Molent
 Priscilla Tan 
 Arpan Patel

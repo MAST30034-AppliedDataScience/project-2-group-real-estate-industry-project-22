@@ -135,6 +135,7 @@ data/landing/
 data/raw/
 data/scraped/
 data/rent/
+data/raw_variables/
 
 # OSX .DS_Store file
 .DS_Store

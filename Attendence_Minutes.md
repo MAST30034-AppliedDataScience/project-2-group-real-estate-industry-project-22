@@ -421,3 +421,194 @@ Priscilla Tan
 Arpan Patel
 Davyn Rusello Sumardi
 Nathan Chen
+
+
+================================================================================================
+
+# Meeting 10:
+Minutes (4/10/2024, 1pm - 230pm)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Priscilla Tan
+Davyn Rusello Sumardi
+Nathan Chen
+
+
+Agenda:
+• Topic 1: Liveability metrics
+• Topic 2: Finalising results
+• Topic 3: Modelling and Visualisation
+• Topic 4: Presentation
+• Topic 5: Task Allocation
+
+
+Tasks :
+1. Presentation slides
+2. More models (correlation + importance) 
+3. Liveability score calculation
+4. Creating Graphics/maps for presentation
+
+Allocation:
+Nathan - Task 1, 4
+Rachel - Task 2
+Priscilla - Task 3
+Davyn - Task 3
+Arpan - Task 4
+
+
+Signed: (list members in attendance) (4/10/2024)
+Rachel Molent
+Priscilla Tan 
+Arpan Patel
+Davyn Rusello Sumardi
+Nathan Chen
+
+================================================================================================
+
+# Meeting 11:
+Minutes (7/10/2024, 9pm - midnight)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Priscilla Tan
+Davyn Rusello Sumardi
+Nathan Chen
+
+
+Agenda:
+• Topic 1: Presentation slides
+
+
+Tasks :
+1. Presentation slides and visualisation
+
+
+Allocation:
+Nathan - Task 1
+Rachel - Task 1
+Priscilla - Task 1
+Davyn - Task 1
+Arpan - Task 1
+
+
+Signed: (list members in attendance) (7/10/2024)
+Rachel Molent
+Priscilla Tan 
+Arpan Patel
+Davyn Rusello Sumardi
+Nathan Chen
+
+================================================================================================
+
+# Meeting 11:
+Minutes (11/10/2024, 8pm - 10pm)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Priscilla Tan
+Davyn Rusello Sumardi
+Nathan Chen
+
+
+Agenda:
+• Topic 1: Presentation 
+• Topic 2: Expectation for the presentation
+
+
+
+Tasks :
+1. Divide team member responsibilities for the presentation
+2. Talked about when we want to finalise want we need to say as well as how to structure and tone our words
+
+
+Allocation:
+Nathan - Task 1,2
+Rachel - Task 1,2
+Priscilla - Task 1,2
+Davyn - Task 1,2
+Arpan - Task 1,2
+
+
+Signed: (list members in attendance) (11/10/2024)
+Rachel Molent
+Priscilla Tan 
+Arpan Patel
+Davyn Rusello Sumardi
+Nathan Chen
+
+================================================================================================
+
+# Meeting 11:
+Minutes (7/10/2024, 9pm - midnight)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Priscilla Tan
+Davyn Rusello Sumardi
+Nathan Chen
+
+
+Agenda:
+• Topic 1: Presentation slides
+
+
+Tasks :
+1. Presentation slides and visualisation
+
+
+Allocation:
+Nathan - Task 1
+Rachel - Task 1
+Priscilla - Task 1
+Davyn - Task 1
+Arpan - Task 1
+
+
+Signed: (list members in attendance) (7/10/2024)
+Rachel Molent
+Priscilla Tan 
+Arpan Patel
+Davyn Rusello Sumardi
+Nathan Chen
+
+================================================================================================
+
+# Meeting 12:
+Minutes (14/10/2024, 10pm - 11pm)
+
+Group Members: (list members in attendance)
+Arpan Patel
+Rachel Molent
+Priscilla Tan
+Davyn Rusello Sumardi
+Nathan Chen
+
+
+Agenda:
+• Topic 1: Presentation practice
+
+
+
+Tasks :
+1. Practice the timing of the presentation to ensuree that we finish within the alloted time limit
+
+
+Allocation:
+Nathan - Task 1
+Rachel - Task 1
+Priscilla - Task 1
+Davyn - Task 1
+Arpan - Task 1
+
+
+Signed: (list members in attendance) (11/10/2024)
+Rachel Molent
+Priscilla Tan 
+Arpan Patel
+Davyn Rusello Sumardi
+Nathan Chen
